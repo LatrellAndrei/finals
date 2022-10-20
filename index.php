@@ -55,15 +55,7 @@
   </select>
   <br><br>
   <input type="submit" value="Submit">
-	</form>
-        <div class="input-group">
-            <button type="submit" class="btn" name="reg_user">Register</button>
-        </div>
-        
-        <p>
-            Already a member? <a href="login.php">Sign in</a>
 
-    </form>
  
 </body>
 </html>

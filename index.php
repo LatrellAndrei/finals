@@ -52,7 +52,7 @@
         </div>
         
         <p>
-            Already a member? <a href="login.html">Sign in</a>
+            Already a member? <a href="login.php">Sign in</a>
 
     </form>
  

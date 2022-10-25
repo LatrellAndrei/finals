@@ -8,7 +8,7 @@ if(!empty($_POST)){
     $student['cellnumber'] = $_POST['cellnumber'];
     $student['idnumber'] = $_POST['idnumber'];
     $student['birthday'] = $_POST['birthday'];
-    $student['address'] = $_POST['address'];
+    $student['Address'] = $_POST['Address'];
     $student['courses'] = $_POST['courses'];
     $studentArray = [];
     array_push($studentArray, $student);
@@ -30,7 +30,7 @@ if(!empty($_POST)){
     <div class="header">
         <h2>Register</h2>
     </div>
-    <form method="post" action="registration.html">
+        <form action= "" method="POST">
         
         <div class="input-group">
             <label>First Name</label>
@@ -41,10 +41,12 @@ if(!empty($_POST)){
             <label>Last Name</label>
             <input type="text" name="lastname" value="" placeholder ="James">
         </div>
-
-        <div>
-            <INPUT TYPE="Radio" Name="gender" Value="Male">Male
-            <INPUT TYPE="Radio" Name="gender" Value="Female">Female
+        <p>Gender:</p>
+        <div class="radio">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="css" name="gender" value="Female"required>
+            <label for="female">Female</label><br>
         </div>
 
         <div class="input-group">
@@ -85,8 +87,12 @@ if(!empty($_POST)){
   
         <br><br>
 
-        <input type="submit" value="Submit">
-
+        <div>
+            <button class="btn" type="submit" name="Submit">
+                Submit
+            </button>
+        </div>
+        </form>
  
 </body>
 </html>

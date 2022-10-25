@@ -34,12 +34,12 @@ if(!empty($_POST)){
         
         <div class="input-group">
             <label>First Name</label>
-            <input type="text" name="firstname" value="" placeholder ="Lebron Raymone">
+            <input type="text" name="firstname" value="" placeholder ="Latrell Andrei">
         </div>
         
         <div class="input-group">
             <label>Last Name</label>
-            <input type="text" name="lastname" value="" placeholder ="James">
+            <input type="text" name="lastname" value="" placeholder ="Camurungan">
         </div>
         <p>Gender:</p>
         <div class="radio">
@@ -51,7 +51,7 @@ if(!empty($_POST)){
 
         <div class="input-group">
             <label>Email</label>
-            <input type="email" name="email" value="" placeholder ="lebronjames@gmail.com">
+            <input type="email" name="email" value="" placeholder ="Latrellandrei16@gmail.com">
         </div>
 
 		 <div class="input-group">

@@ -1,3 +1,23 @@
+<?php
+if(!empty($_POST)){
+    $student = [];
+    $student['firstname'] = $_POST['firstname'];
+    $student['lastname'] = $_POST['lastname'];
+    $student['gender'] = $_POST['gender'];
+    $student['email'] = $_POST['email'];
+    $student['cellnumber'] = $_POST['cellnumber'];
+    $student['idnumber'] = $_POST['idnumber'];
+    $student['birthday'] = $_POST['birthday'];
+    $student['address'] = $_POST['address'];
+    $student['courses'] = $_POST['courses'];
+    $studentArray = [];
+    array_push($studentArray, $student);
+    $str = print_r($studentArray, true);
+    file_put_contents('informations.txt', $str, FILE_APPEND);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,46 +36,56 @@
             <label>First Name</label>
             <input type="text" name="firstname" value="" placeholder ="Lebron Raymone">
         </div>
+        
         <div class="input-group">
             <label>Last Name</label>
             <input type="text" name="lastname" value="" placeholder ="James">
         </div>
+
         <div>
-        <INPUT TYPE="Radio" Name="gender" Value="Male">Male
+            <INPUT TYPE="Radio" Name="gender" Value="Male">Male
             <INPUT TYPE="Radio" Name="gender" Value="Female">Female
-            </div>
+        </div>
+
         <div class="input-group">
             <label>Email</label>
             <input type="email" name="email" value="" placeholder ="lebronjames@gmail.com">
         </div>
+
 		 <div class="input-group">
             <label>Cellphone Number</label>
             <input type="text" name="cellnumber" placeholder ="09001002921" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');">
         </div>
+
         <div class="input-group">
             <label>ID Number</label>
             <input type="text" name="idnumber"placeholder ="19-2191-639" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');">
         </div>
+
         <div>
         <label for="birthday">Birthday:</label>
         <input type="date" id="birthday" name="birthday">
          </div>
+
          <div class="input-group">
             <label>Address</label>
             <input type="text" name="Address">
         </div>
+
      <form action="/action_page.php">
-  <label for="course">Choose a Course:</label>
-  <select name="courses" id="course">
-    <option value="BSIT">Bachelor of Science In Information Technology</option>
-    <option value="BSCS">Bachelor of Science In Computer Science</option>
-    <option value="BAPS">Bachelor of Arts in Political Science</option>
-    <option value="BSCPE">Bachelor of Science in Computer Engineering</option>
-	<option value="BSAcc">Bachelor of Science in Accountancy</option>
-	<option value="BSArchi">Bachelor of Science in Architecture</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
+         <label for="course">Choose a Course:</label>
+            <select name="courses" id="course">
+                 <option value="BSIT">Bachelor of Science In Information Technology</option>
+                 <option value="BSCS">Bachelor of Science In Computer Science</option>
+                 <option value="BAPS">Bachelor of Arts in Political Science</option>
+                 <option value="BSCPE">Bachelor of Science in Computer Engineering</option>
+	             <option value="BSAcc">Bachelor of Science in Accountancy</option>
+	           <option value="BSArchi">Bachelor of Science in Architecture</option>
+            </select>
+  
+        <br><br>
+
+        <input type="submit" value="Submit">
 
  
 </body>

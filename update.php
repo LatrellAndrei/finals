@@ -1,5 +1,18 @@
 <?php 
 	include 'connect.php';
+	$id=$_GET['update'];
+	$sql="SELECT * FROM `users` WHERE id=$id";
+	$result=mysqli_query($con,$sql);
+	$row=mysqli_fetch_assoc($result);
+
+		$name=$row['name'];
+		$email=$row['email'];
+		$CellNo=$row['CellNo'];
+		$idnumber=$row['idnumber'];
+		$address=$row['address'];
+		$course=$row['course'];
+
+
 		if (isset($_POST['submit'])) {
 				$name=$_POST['name'];
 				$email=$_POST['email'];
@@ -8,8 +21,8 @@
 				$address=$_POST['address'];
 				$course=$_POST['course'];
 
-			$sql="INSERT INTO `users` (name,email,CellNo,idnumber,address,course)
-				  VALUES('$name','$email','$CellNo','$idnumber','$address','$course')";
+			$sql="UPDATE `users` set id=$id,name='$name',email='$email',CellNo='$CellNo',idnumber='$idnumber',address='$address',course= '$course'
+				  WHERE id=$id";
 
 			$result=mysqli_query($con,$sql);
 			if ($result) {
@@ -22,40 +35,38 @@
 		}
  ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Create</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
 	<div class="login-box">
-  <h2>Welcome UC-Student!</h2>
-  <h1>Registration</h1>
+  <h2>Registration Form</h2>
   <form method="POST">
     <div class="user-box">
-      <input type="text" name="name" required="" autocomplete="off">
+      <input type="text" name="name" autocomplete="off" value=<?php echo $name;?>>
       <label>Name</label>
     </div>
      <div class="user-box">
-      <input type="email" name="email" required="" autocomplete="off">
+      <input type="email" name="email"  autocomplete="off" value=<?php echo $email;?>>
       <label>Email</label>
     </div>
      <div class="user-box">
-      <input type="text" name="CellNo" required="" autocomplete="off" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');">
+      <input type="text" name="CellNo"  autocomplete="off" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');" value=<?php echo $CellNo; ?>>
       <label>Cell No#</label>
     </div>
     <div class="user-box">
-      <input type="text" name="idnumber" required="" autocomplete="off" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');">
+      <input type="text" name="idnumber"  autocomplete="off" maxlength="11" oninput ="this.value = this.value.replace(/[^0-9-]/g,'').replace(/(\..*)\./g,'$1');" value=<?php echo $idnumber; ?>>
       <label>ID number</label>
     </div>
      <div class="user-box">
-      <input type="text" name="address" required="" autocomplete="off">
+      <input type="text" name="address" autocomplete="off" value=<?php echo $address; ?>>
       <label>Address</label>
     </div>
     <h4>Course:</h4>
     <div class="user-box">
-      <select name="course" required="" autocomplete="off">
+      <select name="course"  autocomplete="off" value=<?php echo $course; ?>>
                  <option value="BSIT">Bachelor of Science In Information Technology</option>
                  <option value="BSCS">Bachelor of Science In Computer Science</option>
                  <option value="BAPS">Bachelor of Arts in Political Science</option>
@@ -70,8 +81,11 @@
       <span></span>
       <span></span>
       <span></span>
-      Submit
+      Update
     </button></a>
+     <a href="/finals/display.php" style="margin-left: 95px; color: #2dfd61;">
+      Cancel
+    </a>
   </form>
 </div>
 </body>

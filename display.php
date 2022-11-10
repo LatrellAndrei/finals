@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
  </head>
  <body style="background-image: url(images/uclogo.png);
- background-color: #013200;">
+ background-color: #86b049;">
  	<div class="container">
 		<a href="index.php" class="text-light"><button class="btn btn-primary my-5">Add user</button></a>
 		<table class="table" style="background-color: white;" >

@@ -43,6 +43,7 @@
       								<th scope="row">'.$id.'</th>
       								<td>'.$name.'</td>
       								<td>'.$email.'</td>
+      								<td>'.$CellNo.'</td>
       								<td>'.$idnumber.'</td>
       								<td>'.$address.'</td>
       								<td>'.$course.'</td>
